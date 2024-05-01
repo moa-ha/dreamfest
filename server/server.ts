@@ -1,13 +1,17 @@
-import express from 'express'
 import * as Path from 'node:path'
 
-import fruitRoutes from './routes/fruits.ts'
+import express from 'express'
+
+import locationRoutes from './routes/locations.ts'
+import scheduleRoutes from './routes/schedule.ts'
+import eventRoutes from './routes/events.ts'
 
 const server = express()
 
 server.use(express.json())
-
-server.use('/api/v1/fruits', fruitRoutes)
+server.use('/api/v1/locations', locationRoutes)
+server.use('/api/v1/schedule', scheduleRoutes)
+server.use('/api/v1/events', eventRoutes)
 
 if (process.env.NODE_ENV === 'production') {
   server.use(express.static(Path.resolve('public')))
@@ -16,5 +20,4 @@ if (process.env.NODE_ENV === 'production') {
     res.sendFile(Path.resolve('./dist/index.html'))
   })
 }
-
 export default server

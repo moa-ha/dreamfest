@@ -1,15 +1,18 @@
 import { Outlet } from 'react-router-dom'
 
+import Header from './Header.tsx'
+import Footer from './Footers.tsx'
+
 export default function Layout() {
   return (
     <>
-      <header>
-        <h1>Fullstack Boilerplate - with Fruits!</h1>
-      </header>
-      <main>
-        <Outlet />
-      </main>
-      <footer></footer>
+      <div id="page-container">
+        <div id="content-wrap">
+          <Header />
+          <Outlet />
+        </div>
+        <Footer />
+      </div>
     </>
   )
 }
