@@ -1,7 +1,7 @@
 # DreamFest
 
-Dreamfest is a music festival schedule managing app.
-This was my first app using full-stack with knex.
+Dreamfest is a music festival schedule managing app.<br>
+This was my first app using Knex & SQL Databases.
 
 ## Setup
 
